@@ -1,1 +1,0 @@
-bool isFisrtGame = true;

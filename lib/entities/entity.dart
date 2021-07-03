@@ -2,8 +2,8 @@
 import 'package:flutter/cupertino.dart';
 
 abstract class Entity {
-  late double x;
-  late double y;
+  late double x = 0;
+  late double y = 0;
   String spriteName;
   bool visible = true;
   List sprites = [];
