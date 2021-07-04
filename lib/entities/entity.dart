@@ -2,8 +2,8 @@
 import 'package:flutter/cupertino.dart';
 
 abstract class Entity {
-  late double x = 0;
-  late double y = 0;
+  late double x;
+  late double y;
   String spriteName;
   bool visible = true;
   List sprites = [];
@@ -15,6 +15,5 @@ abstract class Entity {
   }
   void update();
   void move();
-
   Widget build();
 }
