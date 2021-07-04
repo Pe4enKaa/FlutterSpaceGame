@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:game_mamed/utils/global_vars.dart';
 
@@ -27,7 +26,7 @@ class Player extends Entity {
         left: x,
         child: visible?Transform.rotate(
           angle: _angle,
-          child: sprites.first,
+          child: sprites[currentSprite],
               )
             :SizedBox());
   }
@@ -59,10 +58,4 @@ class Player extends Entity {
    x += sin(_degree * 0.0175) * _speed;
    y -= cos(_degree * 0.0175) * _speed;
   }
-
-  @override
-  void update() {
-    move();
-  }
-
 }

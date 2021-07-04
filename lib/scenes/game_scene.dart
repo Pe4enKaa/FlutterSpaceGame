@@ -21,21 +21,19 @@ class GameScene extends AppScene {
             top: 0,
             left: 0,
             child: Container(
-          decoration:  BoxDecoration(border: Border.all(color: Colors.green)),
-          width: GlobalVars.screenWidth/2,
-          height: GlobalVars.screenHeight,
-          child: GestureDetector(
-            onPanStart: _onPanStart,
-            onPanUpdate: _onPanUpdate,
+              width: GlobalVars.screenWidth/2,
+              height: GlobalVars.screenHeight,
+              child: GestureDetector(
+              onPanStart: _onPanStart,
+              onPanUpdate: _onPanUpdate,
           ),
         )),
         Positioned(
             top: 0,
             left: GlobalVars.screenWidth /2,
             child: Container(
-            decoration: BoxDecoration(border: Border.all(color: Colors.green)),
-            width: GlobalVars.screenWidth/2,
-            height: GlobalVars.screenHeight/2,
+              width: GlobalVars.screenWidth/2,
+              height: GlobalVars.screenHeight/2,
               child: GestureDetector(
                onTap: _onAcceleration,
               ),
@@ -44,9 +42,8 @@ class GameScene extends AppScene {
             top: GlobalVars.screenHeight /2,
             left: GlobalVars.screenWidth /2,
             child: Container(
-            decoration: BoxDecoration(border: Border.all(color: Colors.green)),
-            width: GlobalVars.screenWidth/2,
-            height: GlobalVars.screenHeight/2,
+              width: GlobalVars.screenWidth/2,
+              height: GlobalVars.screenHeight/2,
               child: GestureDetector(
                onTap: _onShoot,
               ),
@@ -61,6 +58,7 @@ class GameScene extends AppScene {
   @override
   void update() {
     _player.update();
+    _listWidgets.clear();
     _listBullets.removeWhere((element) => !element.visible);
     _listBullets.forEach((element) {
       _listWidgets.add(element.build());
